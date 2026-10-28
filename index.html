@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080604">
+<title>Basmala Hamada Mohamed | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#080604;
+  --gold:#d6a45c;
+  --light:#ffe0a0;
+  --text:#f7efe4;
+  --muted:#b7aa98;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:75px}
+body{background:var(--bg);color:var(--text);font-family:Poppins,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+.gold{color:var(--light)}
+.serif{font-family:"Cormorant Garamond",serif}
+section{position:relative;border-bottom:1px solid #d6a45c38}
+.section{padding:75px 0}
+.eyebrow{font-size:.75rem;color:var(--gold);letter-spacing:2px}
+.section-title{font:600 clamp(2rem,5vw,3rem) "Cormorant Garamond",serif;color:var(--light);margin:8px 0}
+.sub{font-size:.8rem;color:var(--muted);line-height:1.9}
+.btn{display:inline-block;border:1px solid var(--gold);border-radius:30px;padding:11px 18px;font-size:.75rem;transition:.3s}
+.btn.primary{background:linear-gradient(110deg,#ffe0a0,#c28a3d);color:#170e04}
+.btn:hover{box-shadow:0 0 20px #d6a45c55;transform:translateY(-3px)}
+/* Gold light effects */
+.glow{position:absolute;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,#c78a3540,transparent 70%);filter:blur(8px);pointer-events:none;animation:float 7s ease-in-out infinite alternate}
+@keyframes float{to{transform:translate(45px,-25px) scale(1.2)}}
+.line{height:1px;position:absolute;bottom:0;width:100%;background:linear-gradient(90deg,transparent,#a86f2d,#ffe4a3,#a86f2d,transparent);box-shadow:0 0 13px #d6a45c;animation:shine 4s infinite}
+@keyframes shine{0%,100%{opacity:.25}50%{opacity:1}}
+/* Navigation */
+nav{position:fixed;z-index:50;top:0;width:100%;background:#080604ed;backdrop-filter:blur(15px);border-bottom:1px solid #d6a45c30}
+.nav-inner{min-height:62px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:italic 2rem "Cormorant Garamond",serif;color:var(--light)}
+.nav-links{display:flex;gap:25px}
+.nav-links a{font-size:.75rem;color:#ddc8a7}
+.nav-links a:hover{color:var(--light)}
+.menu{display:none;background:transparent;border:1px solid #d6a45c;color:var(--light);padding:7px 12px;border-radius:7px}
+/* Hero */
+.hero{min-height:590px;padding:110px 0 60px;display:flex;align-items:center;overflow:hidden;background:linear-gradient(90deg,#080604f7 0%,#080604dc 38%,#08060455 75%,#08060455),linear-gradient(0deg,#080604,transparent 25%),url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero-content{position:relative;z-index:2;max-width:600px}
+.kicker{color:var(--light);font-size:.9rem;margin-bottom:8px}
+h1{font:600 clamp(2.8rem,7vw,5rem)/.98 "Cormorant Garamond",serif;color:#f4ca88;margin:10px 0 18px;text-shadow:0 0 28px #d6a45c35}
+h1 span{display:block}
+.hero h2{font-size:1rem;font-weight:400;margin-bottom:15px}
+.hero p{font-size:.82rem;line-height:1.9;color:#d1c3b3;max-width:420px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.orbit{position:absolute;width:330px;height:330px;border:1px solid #f2bf6b80;border-radius:50%;right:10%;top:24%;animation:rotate 18s linear infinite;box-shadow:0 0 30px #d39a4220}
+.orbit:after{content:"";position:absolute;top:17%;left:10%;width:8px;height:8px;border-radius:50%;background:#ffe0a0;box-shadow:0 0 18px 5px #dba54c}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.cursor{border-right:2px solid var(--light);animation:blink .7s infinite}
+@keyframes blink{50%{border-color:transparent}}
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1.15fr .85fr;gap:30px;align-items:center}
+.about-img{width:100%;height:300px;object-fit:cover;border:1px solid #d6a45c55;border-radius:48% 48% 12px 12px;box-shadow:0 0 30px #d6a45c20}
+.about-copy h3{font:600 2rem/1.08 "Cormorant Garamond",serif;margin:14px 0}
+.about-copy p{font-size:.76rem;line-height:1.9;color:#bdb2a5}
+.facts{display:grid;gap:10px;margin-top:16px;font-size:.74rem;color:#e6d5ba}
+.facts span{color:var(--gold);margin-right:8px}
+.traits{border-left:1px solid #d6a45c40;padding-left:20px;display:grid;gap:19px}
+.trait{display:flex;align-items:center;gap:12px}
+.trait-icon{width:40px;height:40px;display:grid;place-items:center;border:1px solid var(--gold);border-radius:50%;color:var(--light);flex-shrink:0}
+.trait strong{display:block;font-size:.73rem;color:var(--light)}
+.trait small{font-size:.63rem;color:var(--muted)}
+/* Skills */
+.skills{overflow:hidden;background:radial-gradient(ellipse at center,#25170b,#100b07 50%,#080604 80%)}
+.skills-layout{display:grid;grid-template-columns:.8fr 2fr;gap:30px;align-items:center}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.skill{padding:23px 8px;text-align:center;background:linear-gradient(145deg,#21170d,#0d0906);border:1px solid #d6a45c30;border-radius:14px;transition:.3s}
+.skill:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 8px 25px #d6a45c25}
+.skill b{display:block;font-size:1.8rem;color:var(--gold);margin-bottom:10px}
+.skill h3{font-size:.72rem;color:#e6c38a;font-weight:400}
+/* Projects */
+.project-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:25px}
+.projects-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.project{background:#0d0a07;border:1px solid #d6a45c40;border-radius:13px;overflow:hidden;transition:.3s}
+.project:hover{transform:translateY(-6px);border-color:var(--gold)}
+.project img{width:100%;height:135px;object-fit:cover}
+.project-info{padding:13px}
+.project h3{font-size:.78rem;color:var(--light);margin-bottom:7px}
+.project p{font-size:.66rem;color:var(--muted);line-height:1.7}
+.project a{display:inline-block;color:var(--gold);font-size:.7rem;margin-top:10px}
+/* Contact */
+.contact{text-align:center;background:radial-gradient(ellipse at bottom,#24160b,#080604 65%)}
+.contact .sub{max-width:500px;margin:auto}
+.contact-links{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+.contact-links a{border:1px solid #d6a45c55;border-radius:30px;padding:12px 18px;font-size:.75rem;color:#e8c58b;transition:.3s}
+.contact-links a:hover{background:#d6a45c20;border-color:var(--gold)}
+footer{text-align:center;padding:24px 0;color:var(--muted);font-size:.7rem}
+footer span{color:var(--light)}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){
+ .about-grid{grid-template-columns:1fr 1.2fr}
+ .traits{grid-column:1/-1;grid-template-columns:repeat(2,1fr);border:0;padding:0}
+ .skills-layout{grid-template-columns:1fr}
+ .projects-grid{grid-template-columns:repeat(2,1fr)}
+ .orbit{right:-140px;opacity:.5}
+}
+@media(max-width:520px){
+ .nav-inner{min-height:58px}
+ .menu{display:block}
+ .nav-links{display:none;position:absolute;top:58px;left:0;width:100%;padding:20px 5%;background:#080604fa;flex-direction:column;gap:18px;border-bottom:1px solid #d6a45c40}
+ .nav-links.open{display:flex}
+ .nav-links a{font-size:.85rem}
+ .hero{min-height:620px;padding:110px 0 50px;background-position:58% center}
+ .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080604ed,#08060480)}
+ .hero-content{max-width:100%}
+ .hero h2{font-size:.88rem}
+ .hero p{font-size:.78rem}
+ .orbit{width:220px;height:220px;right:-110px;top:36%}
+ .section{padding:58px 0}
+ .about-grid{grid-template-columns:1fr}
+ .about-img{height:250px}
+ .traits{grid-template-columns:1fr 1fr;gap:18px 8px}
+ .trait{gap:8px}
+ .trait-icon{width:34px;height:34px;font-size:.8rem}
+ .trait strong{font-size:.67rem}
+ .trait small{font-size:.57rem}
+ .skills-grid{grid-template-columns:repeat(2,1fr)}
+ .project-head{align-items:flex-start;flex-direction:column}
+ .projects-grid{gap:9px}
+ .project img{height:100px}
+ .project-info{padding:10px}
+ .project h3{font-size:.7rem}
+ .project p{font-size:.62rem}
+ .contact-links{flex-direction:column;align-items:center}
+ .contact-links a{width:100%;max-width:290px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<nav>
+ <div class="container nav-inner">
+  <a href="#home" class="logo">B</a>
+  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  <div class="nav-links" id="links">
+   <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+  </div>
+ </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="glow" style="left:5%;top:20%"></div>
+ <div class="orbit"></div>
+ <div class="container">
+  <div class="hero-content">
+   <div class="kicker">Hello, I'm</div>
+   <h1><span id="typed" class="cursor"></span></h1>
+   <h2>Embedded Systems <span class="gold">&</span> AI Enthusiast</h2>
+   <p>Turning ideas into smart solutions.<br>Exploring the world of Embedded Systems, Artificial Intelligence, and beyond.</p>
+   <div class="actions">
+    <a class="btn primary" href="#projects">View My Projects →</a>
+    <a class="btn" href="#contact">Contact Me ↗</a>
+   </div>
+  </div>
+ </div>
+ <div class="line"></div>
+</section>
+
+<section class="section" id="about">
+ <div class="container about-grid reveal">
+  <div>
+   <img class="about-img" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="Laptop workspace" loading="lazy">
+  </div>
+  <div class="about-copy">
+   <div class="eyebrow">01 / ABOUT ME</div>
+   <h3>I'm not just learning...<br>I'm building <span class="gold">my future.</span></h3>
+   <p>I'm Basmala Hamada Mohamed, a student at Obour Higher Institute. I'm passionate about Embedded Systems, Artificial Intelligence, and technology that makes life smarter. I love solving problems, learning new skills, and turning my ideas into real projects.</p>
+   <div class="facts">
+    <div><span>✦</span>Obour Higher Institute</div>
+    <div><span>⌖</span>Egypt</div>
+    <div><span>⌘</span>Learning & Building</div>
+   </div>
+  </div>
+  <div class="traits">
+   <div class="trait"><div class="trait-icon">♧</div><div><strong>Curious Mind</strong><small>Always eager to learn</small></div></div>
+   <div class="trait"><div class="trait-icon">◇</div><div><strong>Problem Solver</strong><small>Finding better solutions</small></div></div>
+   <div class="trait"><div class="trait-icon">✧</div><div><strong>Tech Enthusiast</strong><small>Love modern technologies</small></div></div>
+   <div class="trait"><div class="trait-icon">⌘</div><div><strong>Future Engineer</strong><small>Building my dreams</small></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section skills" id="skills">
+ <div class="glow" style="right:0;top:0"></div>
+ <div class="container skills-layout reveal">
+  <div>
+   <div class="eyebrow">02 / WHAT I LEARN</div>
+   <h2 class="section-title">My Skills</h2>
+   <p class="sub">Technical skills I'm working on and improving every day.</p>
+   <a class="btn primary" href="#contact" style="margin-top:20px">Let's Connect →</a>
+  </div>
+  <div class="skills-grid">
+   <div class="skill"><b>▦</b><h3>Embedded Systems</h3></div>
+   <div class="skill"><b>&lt;/&gt;</b><h3>C / C++</h3></div>
+   <div class="skill"><b>Py</b><h3>Python</h3></div>
+   <div class="skill"><b>✺</b><h3>Artificial Intelligence</h3></div>
+   <div class="skill"><b>⌘</b><h3>Linux</h3></div>
+   <div class="skill"><b>⬡</b><h3>Cybersecurity</h3></div>
+  </div>
+ </div>
+ <div class="line"></div>
+</section>
+
+<section class="section" id="projects">
+ <div class="container reveal">
+  <div class="project-head">
+   <div><div class="eyebrow">03 / MY WORK</div><h2 class="section-title">Featured Projects</h2><p class="sub">A selection of projects and ideas I'm exploring.</p></div>
+   <a href="https://github.com/" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-size:.75rem">Explore GitHub ↗</a>
+  </div>
+  <div class="projects-grid">
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=700&q=80" alt="Robotics" loading="lazy">
+    <div class="project-info"><h3>Smart Car</h3><p>A concept for a line-following robot using Arduino and sensors.</p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=700&q=80" alt="AI concept" loading="lazy">
+    <div class="project-info"><h3>AI Image Classifier</h3><p>A learning project exploring image classification with Python.</p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=700&q=80" alt="Programming" loading="lazy">
+    <div class="project-info"><h3>Network Scanner</h3><p>A concept project for learning network discovery and analysis.</p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+   </article>
+   <article class="project">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80" alt="Electronic circuit" loading="lazy">
+    <div class="project-info"><h3>IoT Home Automation</h3><p>A concept for controlling home devices using embedded systems.</p><a href="https://github.com/" target="_blank" rel="noopener noreferrer">View project ↗</a></div>
+   </article>
+  </div>
+  <p class="sub" style="margin-top:16px">These are sample project cards. Replace them with your real projects and repository links as you build them.</p>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="glow" style="left:10%;bottom:0"></div>
+ <div class="container reveal">
+  <div class="eyebrow">04 / GET IN TOUCH</div>
+  <h2 class="section-title">Let's Connect</h2>
+  <p class="sub">Feel free to reach out for collaborations, learning opportunities, or just to say hi!</p>
+  <div class="contact-links">
+   <a href="mailto:YOUR_EMAIL@example.com">✉ Email Me</a>
+   <a href="https://github.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer">◉ GitHub</a>
+   <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>Made with <span>♥</span> by Basmala Hamada Mohamed · <span id="year"></span></footer>
+
+<script>
+const name = "Basmala Hamada Mohamed";
+const typed = document.getElementById("typed");
+let i = 0;
+function typeName(){
+ if(i < name.length){
+  typed.textContent += name.charAt(i++);
+  setTimeout(typeName,100);
+ }else{
+  typed.classList.remove("cursor");
+ }
+}
+window.addEventListener("load",()=>setTimeout(typeName,400));
+
+const menu = document.getElementById("menu");
+const links = document.getElementById("links");
+menu.addEventListener("click",()=>{
+ links.classList.toggle("open");
+ menu.textContent = links.classList.contains("open") ? "✕" : "☰";
+});
+links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+ links.classList.remove("open");
+ menu.textContent="☰";
+}));
+
+const observer = new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add("visible");
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
